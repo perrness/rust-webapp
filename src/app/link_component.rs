@@ -12,7 +12,7 @@ impl Component for LinkComponent {
 
     fn view(&self, _ctx: &yew::Context<Self>) -> yew::Html {
         html! {
-            <div>{ "Link to stuff here" }</div>
+            <div class="link-container">{ "Link to stuff here" }</div>
         }
     }
 }

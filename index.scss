@@ -2,19 +2,18 @@ html,
 body {
   height: 100%;
   margin: 0;
+
+  background: #f7f3e9;
 }
 
 body {
-  align-items: center;
   display: flex;
   justify-content: center;
 
-  background: linear-gradient(to bottom right, #444444, #009a5b);
   font-size: 1.5rem;
 }
 
 main {
-  color: #fff6d5;
   font-family: sans-serif;
   text-align: center;
 }
@@ -23,13 +22,45 @@ main {
   height: 20em;
 }
 
-.heart:after {
-  content: "❤️";
-
-  font-size: 1.75em;
-}
-
 h1 + .subtitle {
   display: block;
   margin-top: -1em;
+  margin-bottom: 15px;
+}
+
+.link-container {
+  border: 2px solid #000000;
+  border-radius: 25px;
+  display: block;
+  max-width: 550px;
+  margin: 0 auto 15px;
+  margin-bottom: 5px;
+  padding: 15px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.2 ease-in-out;
+  //background: #f05945;
+  // another color to use is #7abed1 or #f7f3e9
+  text-decoration: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to top,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.link-container:hover {
+  background-size: 100% 100%, 100% 100%;
 }
