@@ -9,8 +9,8 @@ pub fn app() -> Html {
         <main>
             <h1>{ "Per Næss" }</h1>
             <span class="subtitle">{ "Platform Engineeer" }</span>
-            <LinkComponent />
-            <LinkComponent />
+            <LinkComponent link="https://github.com/perrness" text="Github"/>
+            <LinkComponent link="https://linkedin.com/in/perness" text="LinkedIn"/>
         </main>
     }
 }

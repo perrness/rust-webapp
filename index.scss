@@ -42,7 +42,6 @@ h1 + .subtitle {
   transition: all 0.2 ease-in-out;
   //background: #f05945;
   // another color to use is #7abed1 or #f7f3e9
-  text-decoration: none;
   background:
     linear-gradient(
       to top,
@@ -63,4 +62,9 @@ h1 + .subtitle {
 
 .link-container:hover {
   background-size: 100% 100%, 100% 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }

@@ -1,18 +1,26 @@
-use yew::{Component, html};
+use yew::{Component, html, Properties};
+
+#[derive(PartialEq, Properties)]
+pub struct Props {
+    pub text: String,
+    pub link: String,
+}
 
 pub struct LinkComponent;
 
 impl Component for LinkComponent {
     type Message = ();
-    type Properties = ();
+    type Properties = Props;
 
     fn create(_ctx: &yew::Context<Self>) -> Self {
         LinkComponent
     }
 
-    fn view(&self, _ctx: &yew::Context<Self>) -> yew::Html {
+    fn view(&self, ctx: &yew::Context<Self>) -> yew::Html {
         html! {
-            <div class="link-container">{ "Link to stuff here" }</div>
+            <div class="link-container">
+                <a href={ format!("{}", &ctx.props().link) }>{ &ctx.props().text }</a>
+            </div>
         }
     }
 }
