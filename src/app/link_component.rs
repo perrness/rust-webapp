@@ -1,4 +1,5 @@
-use yew::{Component, html, Properties};
+use yew::{html, Properties, function_component, use_context};
+use crate::app::Theme;
 
 #[derive(PartialEq, Properties)]
 pub struct Props {
@@ -6,21 +7,13 @@ pub struct Props {
     pub link: String,
 }
 
-pub struct LinkComponent;
+#[function_component(LinkComponent)]
+pub fn link_component(props: &Props) -> Html {
+    let theme = use_context::<Theme>().expect("No context found");
 
-impl Component for LinkComponent {
-    type Message = ();
-    type Properties = Props;
-
-    fn create(_ctx: &yew::Context<Self>) -> Self {
-        LinkComponent
-    }
-
-    fn view(&self, ctx: &yew::Context<Self>) -> yew::Html {
-        html! {
-            <div class="link-container">
-                <a href={ format!("{}", &ctx.props().link) }>{ &ctx.props().text }</a>
-            </div>
-        }
+    html! {
+        <div class={format!("link-container {}", theme.theme)}>
+            <a href={ format!("{}", &props.link) }>{ &props.text }</a>
+        </div>
     }
 }
