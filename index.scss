@@ -18,21 +18,28 @@ main {
   text-align: center;
 }
 
-.logo {
-  height: 20em;
-}
-
 h1 + .subtitle {
   display: block;
   margin-top: -1em;
   margin-bottom: 15px;
 }
 
+.main-container-light{
+  width: 100%;
+  transition: background .2s linear;
+}
+
+.dark-mode-button {
+   font-size: 24px;
+   background: none;
+   border: none;
+}
+
 .link-container {
   border: 2px solid #000000;
   border-radius: 25px;
   display: block;
-  max-width: 550px;
+  max-width: 250px;
   margin: 0 auto 15px;
   margin-bottom: 5px;
   padding: 15px 20px;
@@ -45,8 +52,8 @@ h1 + .subtitle {
   background:
     linear-gradient(
       to top,
-      rgba(100, 200, 200, 1),
-      rgba(100, 200, 200, 1)
+      rgba(29,253,251,0.5410539215686274),
+      rgba(29,253,251,0.5410539215686274)
     ),
     linear-gradient(
       to top,
@@ -58,6 +65,30 @@ h1 + .subtitle {
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
+
+  &.dark {
+    border-color: #f7f3e9;
+    color: white;
+    background:
+      linear-gradient(
+        to top,
+        rgba(29,253,251,0.5410539215686274),
+        rgba(29,253,251,0.5410539215686274)
+      ),
+      linear-gradient(
+        to top,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+      );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    a {
+      color: white;
+    }
+  }
 }
 
 .link-container:hover {
@@ -69,7 +100,9 @@ a {
   text-decoration: none;
 }
 
-.dark {
+.main-container-dark {
+  width: 100%;
+  transition: background .2s linear;
   background: #222831;
   color: #EEEEEE;
 }

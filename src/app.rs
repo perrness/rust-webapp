@@ -32,12 +32,12 @@ pub fn app() -> Html {
 
     html! {
         <ContextProvider<Theme> context={(*theme_state).clone()}>
-            <main class={format!("{}", theme_state.theme)}>
+            <main class={format!("main-container-{}", theme_state.theme)}>
+                <button class="dark-mode-button" {onclick}>{"💡"}</button>
                 <h1>{ "Per Næss" }</h1>
                 <span class="subtitle">{ "Platform Engineeer" }</span>
                 <LinkComponent link="https://github.com/perrness" text="Github"/>
                 <LinkComponent link="https://linkedin.com/in/perness" text="LinkedIn"/>
-                <button {onclick}>{"💡"}</button>
             </main>
         </ContextProvider<Theme>>
     }
